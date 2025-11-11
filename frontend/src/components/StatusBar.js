@@ -3,8 +3,6 @@ import styled from 'styled-components';
 import { 
   FaCheckCircle, 
   FaExclamationTriangle, 
-  FaPrint, 
-  FaCamera,
   FaMoneyBill,
   FaTicketAlt
 } from 'react-icons/fa';
