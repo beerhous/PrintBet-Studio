@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { FaPlus, FaTrash, FaEdit, FaSave } from 'react-icons/fa';
+import { FaPlus, FaTrash, FaEdit } from 'react-icons/fa';
 import { toast } from 'react-toastify';
 
 import { api } from '../services/api';
@@ -233,10 +233,6 @@ const BetForm = ({ playType, initialData, onBetUpdate, disabled }) => {
   }, [initialData, playType]);
 
   // 加载玩法映射
-  useEffect(() => {
-    loadMappings();
-  }, [playType]);
-
   const loadMappings = async () => {
     try {
       const response = await api.get(`/api/bet/mappings/${playType}`);
@@ -249,11 +245,17 @@ const BetForm = ({ playType, initialData, onBetUpdate, disabled }) => {
     }
   };
 
+  useEffect(() => {
+    loadMappings();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [playType]);
+
   // 数据更新时通知父组件
   useEffect(() => {
     if (betData && onBetUpdate) {
       calculateBetSummary();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [betData, onBetUpdate]);
 
   // 计算投注统计

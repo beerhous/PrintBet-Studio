@@ -187,7 +187,6 @@ const LoadingSpinner = styled.div`
 
 const PrintPreview = ({ betData, onPrint, disabled }) => {
   const [previewData, setPreviewData] = useState(null);
-  const [isGenerating, setIsGenerating] = useState(false);
   const [printSettings, setPrintSettings] = useState({
     printerId: 'PRN001',
     paperWidth: 58,
@@ -203,14 +202,13 @@ const PrintPreview = ({ betData, onPrint, disabled }) => {
     } else {
       setPreviewData(null);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [betData, printSettings]);
 
   const generatePreview = async () => {
     if (!betData || !betData.bets || betData.bets.length === 0) {
       return;
     }
-
-    setIsGenerating(true);
 
     try {
       // 创建投注单
@@ -239,8 +237,6 @@ const PrintPreview = ({ betData, onPrint, disabled }) => {
     } catch (error) {
       console.error('Preview generation error:', error);
       toast.error('生成预览失败: ' + error.message);
-    } finally {
-      setIsGenerating(false);
     }
   };
 
