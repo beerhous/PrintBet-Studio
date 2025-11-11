@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import { FaPrint, FaCog, FaQuestionCircle, FaUpload } from 'react-icons/fa';
+import { FaPrint, FaCog, FaQuestionCircle } from 'react-icons/fa';
 
 const HeaderContainer = styled.header`
   background: linear-gradient(135deg, #007BFF 0%, #0056b3 100%);
@@ -94,8 +94,6 @@ const LoadingSpinner = styled.div`
 `;
 
 const Header = ({ title, onPrint, isLoading }) => {
-  const [showPrintMenu, setShowPrintMenu] = useState(false);
-
   const handleQuickPrint = () => {
     if (!isLoading && onPrint) {
       onPrint({
