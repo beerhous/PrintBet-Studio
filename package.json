@@ -1,0 +1,23 @@
+{
+  "name": "printbet-studio",
+  "version": "1.0.0",
+  "description": "彩票投注单生成与打印系统",
+  "main": "backend/src/server.js",
+  "scripts": {
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd backend && npm start",
+    "client": "cd frontend && npm start",
+    "build": "cd frontend && npm run build",
+    "install-all": "npm install && cd frontend && npm install && cd ../backend && npm install",
+    "test": "cd tests && npm test",
+    "dev": "concurrently \"npm run server:dev\" \"npm run client:dev\"",
+    "server:dev": "cd backend && npm run dev",
+    "client:dev": "cd frontend && npm start"
+  },
+  "keywords": ["lottery", "betting", "ocr", "printing", "escpos"],
+  "author": "PrintBet Studio",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

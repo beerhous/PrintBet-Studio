@@ -1,0 +1,80 @@
+{
+  "playType": "dlt",
+  "playName": "大乐透",
+  "mappings": {
+    "single": {
+      "name": "单式",
+      "template": "DLT|FR:{front}|BK:{back}|A:{added}",
+      "format": {
+        "front": {
+          "count": 5,
+          "range": "01-35",
+          "prefix": ""
+        },
+        "back": {
+          "count": 2, 
+          "range": "01-12",
+          "prefix": ""
+        },
+        "added": {
+          "options": ["0", "1"],
+          "description": "0=不追加, 1=追加"
+        }
+      }
+    },
+    "multiple": {
+      "name": "复式",
+      "template": "DLT|FR:{front}|BK:{back}|A:{added}|M:1",
+      "format": {
+        "front": {
+          "min": 5,
+          "max": 12,
+          "range": "01-35",
+          "prefix": ""
+        },
+        "back": {
+          "min": 2,
+          "max": 12,
+          "range": "01-12", 
+          "prefix": ""
+        },
+        "added": {
+          "options": ["0", "1"],
+          "description": "0=不追加, 1=追加"
+        }
+      }
+    },
+    "dantuo": {
+      "name": "胆拖",
+      "template": "DLT|FRD:{dan}|FRT:{tuo}|BK:{back}|A:{added}",
+      "format": {
+        "dan": {
+          "min": 1,
+          "max": 4,
+          "range": "01-35",
+          "prefix": ""
+        },
+        "tuo": {
+          "min": 2,
+          "max": 34,
+          "range": "01-35", 
+          "prefix": ""
+        },
+        "back": {
+          "min": 2,
+          "max": 12,
+          "range": "01-12",
+          "prefix": ""
+        },
+        "added": {
+          "options": ["0", "1"],
+          "description": "0=不追加, 1=追加"
+        }
+      }
+    }
+  },
+  "price": {
+    "base": 2,
+    "added": 1
+  }
+}

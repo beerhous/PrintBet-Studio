@@ -1,0 +1,67 @@
+{
+  "playType": "pls",
+  "playName": "排列三",
+  "mappings": {
+    "single": {
+      "name": "单式",
+      "template": "PLS|N:{numbers}",
+      "format": {
+        "numbers": {
+          "count": 3,
+          "range": "0-9",
+          "prefix": ""
+        }
+      }
+    },
+    "multiple": {
+      "name": "复式",
+      "template": "PLS|M:1|{positions}",
+      "format": {
+        "positions": {
+          "hundreds": {
+            "min": 1,
+            "max": 10,
+            "range": "0-9",
+            "prefix": "H:"
+          },
+          "tens": {
+            "min": 1,
+            "max": 10,
+            "range": "0-9", 
+            "prefix": "T:"
+          },
+          "units": {
+            "min": 1,
+            "max": 10,
+            "range": "0-9",
+            "prefix": "U:"
+          }
+        }
+      }
+    },
+    "hezhi": {
+      "name": "和值",
+      "template": "PLS|HZ:{sum}",
+      "format": {
+        "sum": {
+          "range": "0-27",
+          "prefix": ""
+        }
+      }
+    },
+    "pls5": {
+      "name": "排列五",
+      "template": "PL5|N:{numbers}",
+      "format": {
+        "numbers": {
+          "count": 5,
+          "range": "0-9",
+          "prefix": ""
+        }
+      }
+    }
+  },
+  "price": {
+    "base": 2
+  }
+}

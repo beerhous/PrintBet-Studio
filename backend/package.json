@@ -1,0 +1,26 @@
+{
+  "name": "printbet-studio-backend",
+  "version": "1.0.0",
+  "description": "PrintBet Studio Backend API",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "multer": "^1.4.5-lts.1",
+    "body-parser": "^1.20.2",
+    "fs-extra": "^11.1.1",
+    "path": "^0.12.7",
+    "uuid": "^9.0.1",
+    "moment": "^2.29.4",
+    "python-shell": "^5.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1",
+    "jest": "^29.7.0"
+  }
+}
