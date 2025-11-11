@@ -1,7 +1,7 @@
 name: Validate Cloudflare Pages build
 on:
   push:
-    branches: [ fix/frontend-structure ]
+    branches: [ fix/frontend-structure, copilot/fixfrontend-structure ]
   pull_request:
     branches: [ main, master ]
 
